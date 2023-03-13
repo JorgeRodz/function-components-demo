@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Component, useState } from 'react';
 
 // * reglas de los hooks:
 // - No se llaman en loops, ni condiciones, ni while, etc etc
@@ -8,7 +8,27 @@ import { useState } from 'react';
 // -  2 - Custom hooks
 // -      - Cuando se crea un custom hook siempre se antepone la palabra 'use' : useMyCustomHook
 
-const App = ({ initialCount }) => {
+class App extends Component {
+  state = { contador: 0 }
+  incrementar = () => {
+    this.setState({ contador: this.state.contador + 1 })
+  }
+  decrementar = () => {
+    this.setState({ contador: this.state.contador - 1 })
+  }
+  render() {
+    return (
+      <div>
+        contador: {this.state.contador}
+        <button onClick={this.incrementar}>Incrementar</button>
+        <button onClick={this.decrementar}>Incrementar</button>
+      </div>
+    )
+
+  }
+}
+
+const AppFunctionComponent = ({ initialCount }) => {
   const [count, setCount] = useState(initialCount);
 
   return (
