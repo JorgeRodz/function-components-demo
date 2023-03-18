@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import AppCustomHook from './AppCustomHook';
+import UseEffect from './useEffect'
+import UseState from './useState';
+import CustomHook from './CustomHook';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppCustomHook />
+    <UseEffect />
   </React.StrictMode>
 );
 
