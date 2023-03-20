@@ -18,6 +18,20 @@ const useContador = (inicial) => {
   return [count, incrementar]
 }
 
+const Interval = ({ contador }) => {
+  useEffect(() => {
+    const i = setInterval(() => console.log(contador), 1000)
+
+    return () => {
+      clearInterval(i)
+    }
+  }, [contador])
+
+  return   (
+    <p>Intervalo</p>
+  )
+}
+
 const App = ({ initialCount }) => {
   const [count, incrementar] = useContador(0)
 
@@ -31,9 +45,10 @@ const App = ({ initialCount }) => {
       Count: {count}
       <p>
        <button onClick={incrementar}>  {/*Same as above but here we using a arrow function to execute the state*/}
-          +
+          Incrementar
         </button>
       </p>
+      <Interval contador={count} />
     </>
   );
 };
