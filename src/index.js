@@ -4,13 +4,14 @@ import './index.css';
 import UseState from './useState';
 import UseEffect from './useEffect'
 import UseReducer from './useReducer';
+import UseRef from './useRef';
 import CustomHook from './CustomHook';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UseReducer />
+    <UseRef />
   </React.StrictMode>
 );
 

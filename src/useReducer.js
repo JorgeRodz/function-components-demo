@@ -5,7 +5,7 @@ import { useReducer, useState } from "react";
 const initial = { contador: 0 }
 
 // useReducer needs a function in order to work - this function is called reducer
-// This reducer function recives two parameters: state and action
+// This reducer function receives two parameters: state and action
 const reducer  = (state, action) => {
   switch (action.type) {
     case 'incrementar':
@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div>
       Contador: {state.contador}
-      <input type="text" value={valor} onChange={e => setValor(e.target.value)} />
+      <input value={valor} onChange={e => setValor(e.target.value)} />
       <button onClick={()=> dispatch({ type: 'incrementar' })}>Mas</button>
       <button onClick={()=> dispatch({ type: 'decrementar' })}>Menos</button>
       <button onClick={()=> dispatch({ type: 'set', payload: valor })}>Setear</button>
