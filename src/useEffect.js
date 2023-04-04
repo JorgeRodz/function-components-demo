@@ -18,6 +18,21 @@ const useContador = (inicial) => {
   return [count, incrementar]
 }
 
+class IntervalClass extends Component {
+  intervalo = ''
+  componentDidMount() {
+    this.intervalo = setInterval(() => console.log(this.props.contador), 1000)
+  }
+  componentWillUnmount() {
+    clearInterval(this.intervalo)
+  }
+  render() {
+    return (
+      <p>Intervalo</p>
+    )
+  }
+}
+
 const Interval = ({ contador }) => {
   useEffect(() => {
     const i = setInterval(() => console.log(contador), 1000)
@@ -48,7 +63,7 @@ const App = ({ initialCount }) => {
           Incrementar
         </button>
       </p>
-      <Interval contador={count} />
+      <IntervalClass contador={count} />
     </>
   );
 };
