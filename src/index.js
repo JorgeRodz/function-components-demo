@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import UseEffect from './useEffect'
 import UseState from './useState';
+import UseEffect from './useEffect'
+import UseReducer from './useReducer';
 import CustomHook from './CustomHook';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UseEffect />
+    <UseReducer />
   </React.StrictMode>
 );
 
